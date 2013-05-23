@@ -1,5 +1,6 @@
+
 /*
-** GL / LibXVID Example (C) Josh PH3NOM Pearson 2013
+** Sega Dreamcast GL / LibXVID Example (C) Josh PH3NOM Pearson 2013
 */
 
 #include <stdio.h>
@@ -37,7 +38,7 @@ int main()
 
      pvr_init(&params);  /* Init the PVR */
 
-   glKosInit();  /* Init the GL */
+     glKosInit();  /* Init the GL */
 	 
 	 /* Set all Gl transform matrices to identity for 2D transform */
 	 glMatrixMode(GL_SCREENVIEW);
@@ -189,35 +190,6 @@ void RenderDir( DirEntry * dir, Font * font, int entry, int entries )
     }
     
     glEnd();
-/*    
-    dptr = dir + entry;
-            if( FsMediaContainer( dptr->Name ) == CONTAINER_AVI )
-            {
-                String * FileName = NewString();
-                StringSet( FileName, dptr->Name );
-                StringInsert( FileName, "/cd" );  
-                
-                VideoThumbnail * tbn = LibXVID_Thumbnail( FileName->String );
-                
-                if(tbn==NULL)
-                {
-                    RenderTbn( NULL, x+200.0f, 300.0f, 128, 100 ); 
-                    return;
-                }             
-                    
-                glGenTextures(1, &TBN);
-                glBindTexture(GL_TEXTURE_2D, TBN );
-                
-                glKosTex2D( tbn->Flags, tbn->Width, tbn->Height, tbn->Texture );
-                
-                float x = (vid_mode->width)-(tbn->Width/2)-16.0f;
-                RenderTbn( tbn, x, 300.0f, tbn->Width, tbn->Height );
-                free(tbn);
-            }
-            else
-
-                RenderTbn( NULL, x+200.0f, 300.0f, 128, 100 );
-*/
 }
 
 Font * LoadFontTex()
